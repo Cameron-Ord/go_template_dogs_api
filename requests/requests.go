@@ -15,12 +15,13 @@ func Req_Dogs() ([]DogImage, error) {
 	client := &http.Client{
 		Timeout: time.Second * 10,
 	}
+	fmt.Println(Creds.Api_URL)
 	request, err := http.NewRequest("GET", Creds.Api_URL, nil)
 	if err != nil {
 		fmt.Println("Error creating request:", err)
 		return nil, err
 	}
-	request.Header.Set("Authorization", "x-api-key "+Creds.Api_KEY)
+	request.Header.Set("x-api-key", Creds.Api_KEY)
 	response, err := client.Do(request)
 	if err != nil {
 		fmt.Println("Error making request:", err)

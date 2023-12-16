@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="/assets/styles.css">
+</head>
+<body>
+    <main>
+        <section class="sect_main">
+            {{range .}}
+                <img src="{{.URL}}" alt="Dog Image">
+            {{end}}
+        </section>
+    </main>
+    <script type="module" src="js/api_calls.js"></script>
+</body>
+</html>
